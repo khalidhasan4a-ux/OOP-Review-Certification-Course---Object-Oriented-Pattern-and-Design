@@ -1,12 +1,12 @@
-// Student class to store and manage student information
+
 public class Student {
-    // Step 1: Private variables for student data
+   
     private String studentId;
     private String name;
     private double grade;
     private boolean isActive;
     
-    // Step 2: Getter methods to access private variables
+   
     public String getStudentId() {
         return this.studentId;
     }
@@ -23,7 +23,7 @@ public class Student {
         return this.isActive;
     }
     
-    // Step 3: Setter methods with simple validation
+
     public void setStudentId(String studentId) {
         this.studentId = studentId;
     }
@@ -33,7 +33,7 @@ public class Student {
     }
     
     public void setGrade(double grade) {
-        // Validate grade is between 0 and 100
+        
         if (grade >= 0 && grade <= 100) {
             this.grade = grade;
         } else {
@@ -45,7 +45,7 @@ public class Student {
         this.isActive = isActive;
     }
     
-    // Step 4: Method to stringify student details
+   
     public String displayStudentDetails() {
         return "ID: " + this.studentId +
                 "\nName: " + this.name + 
@@ -53,7 +53,7 @@ public class Student {
                 "\nStatus: " + (this.isActive ? "Active" : "Inactive");
     }
     
-    // Step 5: Method to calculate letter grade
+   
     public String getLetterGrade() {
         if (this.grade >= 90) {
             return "A";
@@ -68,7 +68,7 @@ public class Student {
         }
     }
     
-    // Step 6: Method to check if student is passing
+   
     public boolean isPassing() {
         return this.grade >= 60;
     }
