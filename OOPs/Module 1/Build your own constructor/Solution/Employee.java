@@ -1,27 +1,26 @@
-// Employee class to demonstrate encapsulation
+
 public class Employee implements Cloneable {
-    // Step 1: Declare private variables for name, age, and salary
+   
     private String name;
     private int age;
     private double salary;
     
-    // Step 2: Create constructors
-    // 2.1: Default constructor
+   
     public Employee() {
         this.name = "Unknown";
         this.age = 18;
         this.salary = 0.0;
     }
     
-    // 2.2: Overloaded constructor that initializes all three variables
+   
     public Employee(String name, int age, double salary) {
-        // Use setters to ensure validation rules are applied
+        
         setName(name);
         setAge(age);
         setSalary(salary);
     }
     
-    // Step 3: Create public getter methods for each variable
+    
     public String getName() {
         return this.name;
     }
@@ -34,9 +33,9 @@ public class Employee implements Cloneable {
         return this.salary;
     }
     
-    // Step 4: Create public setter methods with validation
+    
     public void setName(String name) {
-        // Validation: name cannot be null or empty
+       
         if (name != null && !name.trim().isEmpty()) {
             this.name = name;
         } else {
@@ -46,7 +45,7 @@ public class Employee implements Cloneable {
     }
     
     public void setAge(int age) {
-        // Validation: age must be between 18 and 65 (inclusive)
+       
         if (age >= 18 && age <= 65) {
             this.age = age;
         } else {
@@ -56,7 +55,7 @@ public class Employee implements Cloneable {
     }
     
     public void setSalary(double salary) {
-        // Validation: salary must be non-negative
+       
         if (salary >= 0) {
             this.salary = salary;
         } else {
@@ -65,12 +64,12 @@ public class Employee implements Cloneable {
         }
     }
     
-    // Step 5: Create a method to calculate annual salary
+   
     public double calculateAnnualSalary() {
         return this.salary * 12;
     }
     
-    // Step 6: Create a method to give a raise
+   
     public void giveRaise(double percentage) {
         if (percentage > 0) {
             double raiseAmount = this.salary * (percentage / 100);
@@ -81,7 +80,7 @@ public class Employee implements Cloneable {
         }
     }
     
-    // Step 7: Create a method to display employee details
+   
     public void displayDetails() {
         System.out.println("Employee Details:");
         System.out.println("Name: " + this.name);
@@ -91,8 +90,7 @@ public class Employee implements Cloneable {
         System.out.println("---------------------------");
     }
     
-    // Step 8: Override the clone method to make Employee objects cloneable
-    @Override
+    
     protected Object clone() throws CloneNotSupportedException {
         // Call the superclass clone method to create a shallow copy
         return super.clone();
